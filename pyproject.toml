@@ -1,0 +1,46 @@
+[project]
+name = "pythonproject2"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Elena",email = "elenaolgaegorova@yandex.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pandas (>=2.2.3,<3.0.0)",
+    "requests (>=2.32.3,<3.0.0)",
+    "logger (>=1.4,<2.0)",
+    "dotenv (>=0.9.9,<0.10.0)",
+    "pytest (>=8.3.5,<9.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 119
+exclude = '.git'
+
+[tool.isort]
+multi_line_output = 1
+line_length = 119
+force_single_line = true
+
+[tool.mypy]
+disallow_untyped_defs = true
+warn_return_any = true
+exclude = "venv"
+
+[tool.poetry.group.lint.dependencies]
+mypy = "^1.15.0"
+black = "^25.1.0"
+isort = "^6.0.1"
+flake8 = "^7.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^6.1.1"
+
